@@ -1,15 +1,14 @@
 # app.py
-from utils import add_entry, read_entries
+from utils import add_entry, read_entries, delete_last_entry
 
 add_entry("A: refining update")
+
+delete_last_entry()
+add_entry("B: replaced deleted entry")
 
 for line in read_entries():
     print(line)
     
     
     
-def delete_last_entry():
-    with open("data.txt", "r") as f:
-        lines = f.readlines()
-    with open("data.txt", "w") as f:
-        f.writelines(lines[:-1])    
+ 
